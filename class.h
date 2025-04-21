@@ -9,11 +9,10 @@ class cylinder{
     double radius {}; //member variables
     double height {};
     public: 
-    cylinder(){ //constructor, it is used to initialize the class.
+    cylinder()=default; //constructor, it is used to initialize the class.
         //it is called when the object is created. It is a special function avaialbe only for classes. 
-        radius=1;
-        height=1;
-    }
+        
+    
     cylinder(double r, double h){ //constructor with parameters
         if (r<1 || h<1){
             cout<<"Invalid input"<<endl;
