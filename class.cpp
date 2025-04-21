@@ -20,6 +20,7 @@ class cylinder;
 class functions have access to all class varaibles 
 private members cannot be accessed outside the class at all. 
 */
+class dog;
 
 int main(){
 
@@ -34,9 +35,15 @@ int main(){
 
    c1.setheight(2.85); //setter function
 
-   
+
     cout<<c1.volume()<<endl; //the bracket after cylinder is used to create a temporary object of the class.
     cout<<sizeof(c1)<<endl; 
     cout<<c1.getheight(); //getter function
+    end();
+
+    dog d1("fafda","pug",6);
+   d1.bark();
+   d1.dogage();
+   //we just need to create a destructor, it is automatically called by the compiler at run time. 
 }
 

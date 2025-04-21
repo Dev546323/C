@@ -1,5 +1,4 @@
-#ifndef CYLINDER_H
-#define CYLINDER_H
+
 #include <cmath>
 #define PI 3.14159265358979323846
 #include <iostream>
@@ -50,4 +49,48 @@ class cylinder{
         return PI*pow(radius,2)*height;
     }
 };
-#endif
+
+class dog{
+    private: 
+    string name;
+    string breed;
+    int *age =new int;
+
+    public:
+    dog(string n, string b, int a){
+        name = n;
+        breed = b;
+        *age = a;
+    }
+    void bark(){
+        cout<<"Woof Woof"<<endl;
+    }
+    void setname(string n){
+        name = n;
+    }
+    void setbreed(string b){
+        breed = b;
+    }
+    void setage(int a){
+        *age = a;
+    }
+    string getname(){
+        return name;
+    }
+    string getbreed(){
+        return breed;
+    }
+    int getage(){
+        return *age;
+    } 
+    dog()=default; 
+    void dogage(){
+        cout<<"Dog's age is "<<*age*7<<endl;
+    }
+    ~dog(){ //destructor
+        cout<<"Destructor called"<<endl;
+        delete age; //delete the pointer to avoid memory leak
+    }
+       
+};
+
