@@ -28,13 +28,15 @@ int main(){
     cylinder c1; //default constructor is called.
     //The default constructor creates a TEMP and EMPTY object. 
 
-    c1=cylinder(4.5,1.03); //c1 is considered as an object of the class
+    c1=cylinder(4.5,1.23); //c1 is considered as an object of the class
     //objects can be understood of as pointers for the entire class, you can access data inside the class using the object. 
     //it is not a pointer because it has nothing to do with mem addy, but it acts like a pointer
 
+   c1.setheight(2.85); //setter function
 
+   
     cout<<c1.volume()<<endl; //the bracket after cylinder is used to create a temporary object of the class.
     cout<<sizeof(c1)<<endl; 
-
+    cout<<c1.getheight(); //getter function
 }
 
