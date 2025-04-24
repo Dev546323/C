@@ -20,7 +20,9 @@ class cylinder;
 class functions have access to all class varaibles 
 private members cannot be accessed outside the class at all. 
 */
-class dog;
+class dog; //members private by default
+struct cat;//members public by default 
+//above is the only diff between the two 
 
 int main(){
 
@@ -44,6 +46,25 @@ int main(){
     dog d1("fafda","pug",6);
    d1.bark();
    d1.dogage();
+   cout<<"Dog's name is "<<d1.getname()<<endl;
    //we just need to create a destructor, it is automatically called by the compiler at run time. 
+    d1.thi();
+    cout<<sizeof(d1)<<endl;  //32b*2 strings + 8b pointer
+
+   dog* pd = new dog("pavbhaji","pug",6);
+   pd->thi(); //pd is a pointer it can't be dereferenced using * 
+   //class pointers are dereferenced using -> operator.
+
+
+   end();
+   cat C("pizza","orange", 2);
+    C.meow();
+    cout<<C.getname()<<endl;
+    cout<<C.getcolor()<<endl;
+    cout<<C.getbraincells()<<endl;
+
+    delete pd; //destructor inside the dog class will also be called. 
+    //auto destructor is called when object goes out of scope (generally at the end of main)
+
 }
 

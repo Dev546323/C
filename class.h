@@ -57,7 +57,7 @@ class dog{
     int *age =new int;
 
     public:
-    dog(string n, string b, int a){
+    dog(string_view n, string_view b, int a){
         name = n;
         breed = b;
         *age = a;
@@ -87,10 +87,58 @@ class dog{
     void dogage(){
         cout<<"Dog's age is "<<*age*7<<endl;
     }
+    void thi(){
+        cout<<"This pointer is created to save the mem addy for each object created: "<<this<<endl;
+        //this pointer can be useful to chain call multiple functions using pointers. ignoring for now. 
+    }
     ~dog(){ //destructor
-        cout<<"Destructor called"<<endl;
+       cout<<"Destructor called"<<endl;
         delete age; //delete the pointer to avoid memory leak
+        /*Destructors are called when 
+        an object is passed by value 
+        when a local stack object goes out of scope 
+        when a heap OBJECT is released with delete
+        
+        with multiple objects, the object constructed last is destructed first.
+        constructors function in the same order as the call 
+        destructors work in LIFO */
     }
        
 };
+
+struct cat{
+    private: 
+    string name;
+    string color;
+    int braincells;
+    public:
+    void meow(){
+        cout<<"Meow Meow"<<endl;
+    }
+    void setname(string_view n){
+        name = n;
+    }
+    void setcolor(string_view b){
+        color = b;
+    }
+    void setbraincells(int a){
+        braincells = a;
+    }
+    string getname(){
+        return name;
+    }
+    string getcolor(){
+        return color;
+    }
+    int getbraincells(){
+        return braincells;
+    } 
+    cat()=default;
+    cat(string_view n, string_view c, int b){
+        name = n;
+        color = c;
+        braincells = b;
+    }
+};
+
 
