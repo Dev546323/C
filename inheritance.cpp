@@ -25,7 +25,6 @@ int main(){
     cout<<"\nPlease Enter your age: ";
     int age;
     cin>>age;
-    //person p1(string_view(fname),string_view(lname),age);
     person p1(fname,lname,age);
     p1.display();
 }
