@@ -4,6 +4,9 @@ using namespace std;
 
 
 class person {
+    friend std::ostream& operator<<(std::ostream& ,  const person& person); //basically a print function for the entire class object. 
+    //defines the class os stream as a friend where the <<operator is overloaded with the class object.
+    
     string name{"Undefined"};
     int age{0};
     int years{};
@@ -132,7 +135,8 @@ class person {
     }
 
 };
-class promotion :public person{
+class promotion : person{ //person is the base class and promotion is the derived class.
+    //promotion has everything that person has and more. whereas person doesn't have anything that promotion has. 
     public:
     promotion()= default;
     promotion(string f, int a, int y, int c, int s, double b, string p):person(f,a,y,c,s,b,p){}//constructor requires explicit declaration. 
@@ -156,6 +160,15 @@ class promotion :public person{
             cout<<getfname()<<" "<<getage()<<" "<<getyears()<<" "<<getcontribution()<<" "<<getsalary()<<" "<<getbehavior()<<" "<<getpost()<<endl;
 
         }
+        else cout<<getfname()<<" "<<getage()<<" "<<getyears()<<" "<<getcontribution()<<" "<<getsalary()<<" "<<getbehavior()<<" "<<getpost()<<endl;
     }
 
 };
+//class engineer : public person //this means, that there is a person from the class person, who has the speciality of being an engineer and the information regarding engineer/engineering. can be saved here and kept away from the person class. 
+//public type specifier here retains the access specifier of the base class. (pvt=pvt, pub=pub, prot=prot)
+
+
+//class : protected //type specifier turns the members of the base class to protected. (pvt=pvt, pub=prot, prot=prot)
+//class : private //type specifier turns all the members of the base class to private.
+//class : virtual //type specifier is used to avoid ambiguity in multiple inheritance.
+//class : friend //type specifier is used to give access to the private members of the class to the friend class.
